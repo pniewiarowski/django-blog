@@ -1,2 +1,11 @@
+# Django
+*.log
+*.pot
+*.pyc
+
+media
+uploads
 *.sqlite3
-.idea
+
+# IDE
+.idea/
