@@ -5,6 +5,11 @@ from . import models
 
 
 def index(request):
+    """
+    Default view for blog application.
+    :param request: Given request.
+    :return: Response as a rendered template.
+    """
     match request.method:
         case 'GET':
             template = 'blog/index.html'
