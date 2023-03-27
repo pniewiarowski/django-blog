@@ -6,6 +6,18 @@
 
 {% block content %}
     <div>
-        <h1>I am alive!</h1>
+        {% if categories %}
+            <h1>Number of categories in database: {{ categories|length }}</h1>
+        {% else %}
+            <h1>There are no categories in database.</h1>
+        {% endif %}
+    </div>
+
+    <div>
+        {% if articles %}
+            <h1>Number of articles in database: {{ articles|length }}</h1>
+        {% else %}
+            <h1>There are no articles in database.</h1>
+        {% endif %}
     </div>
 {% endblock %}
