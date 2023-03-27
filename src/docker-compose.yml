@@ -1,10 +1,21 @@
 version: "3.5"
 
 services:
-  app:
+  database:
+    image: postgres
+    container_name: django_blog_database
+    environment:
+      - POSTGRES_DB=django-blog
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password123
+
+  application:
+    container_name: django_blog_application
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app/
     ports:
       - "8000:8000"
+    depends_on:
+      - database
