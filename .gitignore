@@ -12,3 +12,12 @@ uploads
 
 # IDE
 .idea/
+
+# SASS
+.sass-cache/
+
+# CSS out
+*.css
+
+# JS out
+*.js
