@@ -9,4 +9,7 @@ Global project routes.
 urlpatterns = [
     path('', include('blog.urls')),
     path('admin/', admin.site.urls),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
+
+# Include routes for static files.
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
