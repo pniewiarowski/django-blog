@@ -23,7 +23,7 @@ def index(request):
 @require_http_methods(['GET'])
 def article_details(request, primary_key):
     """
-    View to display data from single Blog article.
+    View for display data from single Blog article.
     :param primary_key: Primary key to load Blog article, provided from URL.
     :param request: Given request.
     :return: Response as a rendered template.
