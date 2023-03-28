@@ -18,6 +18,7 @@ uploads
 
 # CSS out
 *.css
+*.css.map
 
 # JS out
 *.js
