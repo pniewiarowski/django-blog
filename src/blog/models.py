@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MinValueValidator
 
 
 class Category(models.Model):
@@ -35,6 +36,7 @@ class Article(models.Model):
     thumbnail = models.ImageField(upload_to=f'uploads/blog/thumbnail/', blank=True, null=True)
     main_content = models.TextField(blank=True, null=True)
     created = models.DateTimeField(default=timezone.now, blank=False, null=False)
+    views = models.IntegerField(default=0, blank=False, null=False, validators=[MinValueValidator(0)])
     category = models.ForeignKey(to=Category, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:

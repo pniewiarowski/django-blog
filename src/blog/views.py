@@ -3,6 +3,7 @@ from django.views.decorators.http import require_http_methods
 from django.http import HttpResponseNotFound
 
 from . import models
+from . import utils
 
 
 @require_http_methods(['GET'])
@@ -15,7 +16,7 @@ def index(request):
     template = 'blog/index.html'
     context = {
         'categories': models.Category.objects.filter(is_enabled=True),
-        'articles': models.Article.objects.filter(is_enabled=True),
+        'articles': models.Article.objects.filter(is_enabled=True).order_by('-created'),
     }
 
     return render(request, template, context)
@@ -36,7 +37,7 @@ def article_details(request, primary_key):
 
     template = 'blog/article_details.html'
     context = {
-        'article': article
+        'article': utils.increment_article_views(article)
     }
 
     return render(request, template, context)

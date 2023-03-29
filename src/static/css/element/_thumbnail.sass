@@ -6,37 +6,55 @@
   justify-content: center
   align-items: center
   flex-direction: column
+
   width: 40rem
   height: 25rem
+
   background-attachment: fixed
   background-position: center
   background-repeat: no-repeat
   background-size: cover
-  transform: scale(0.95)
+
   border: solid 0.5rem $main-light-color
   border-radius: 0.5rem
+
+  transform: scale(0.95)
   transition: transform ease-in-out 80ms
 
   &:before
     content: ''
     position: absolute
     top: 110%
+
     width: 0.5rem
     height: 0.5rem
+
     background-color: $main-light-color
+
     transition: width ease-in-out 80ms
 
   &:hover
     cursor: pointer
-    transform: scale(0.90)
+    transform: scale(0.93)
 
     &:before
       width: 8rem
 
-  &__title
-    font-size: 4rem
-    font-weight: 900
-    font-family: $accent-font-family
-    letter-spacing: 0.25rem
+  &__title,
+  &__views
+    padding: 1rem
+
+    font-family: $main-font-family
+
     color: $main-light-color
-    border-bottom: solid 1rem $main-light-color
+    background-color: $main-dark-color-alpha
+
+  &__title
+    padding: 1rem
+    font-size: 3rem
+
+    border-bottom: solid 0.5rem $main-light-color
+
+  &__views
+    margin: 1rem 0 0 0
+    font-size: 1rem

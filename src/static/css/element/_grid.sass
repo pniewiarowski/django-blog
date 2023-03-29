@@ -1,5 +1,5 @@
 /*
-  Bem block for Grid.
+  BEM block for Grid.
 
 .grid
   display: flex
@@ -7,9 +7,8 @@
   align-items: center
   flex-wrap: wrap
 
-  @media screen and (min-width: 1240px)
+  @media screen and (min-width: $desktop-breakpoint)
     justify-content: flex-start
 
-
   &__item
-    margin: 1rem 0
+    margin: $main-outer-spacing $main-outer-spacing - 1rem
