@@ -7,9 +7,11 @@ from django.conf.urls.static import static
 Global project routes.
 """
 urlpatterns = [
-    path('', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('', include('blog.urls')),
 ]
 
-# Include routes for static files.
+"""
+Include route for static files.
+"""
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

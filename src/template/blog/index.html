@@ -5,12 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="heading">
-        <h1 class="heading__text heading__text--h1">Blog Default Page!</h1>
-        <h1 class="heading__text heading__text--h2">Blog Default Page!</h1>
-        <h1 class="heading__text heading__text--h3">Blog Default Page!</h1>
-        <h1 class="heading__text heading__text--h4">Blog Default Page!</h1>
-        <h1 class="heading__text heading__text--h5">Blog Default Page!</h1>
-        <h1 class="heading__text heading__text--h6">Blog Default Page!</h1>
+    <div class="grid">
+        {% for article in articles %}
+            <div class="grid__item">
+                {% include 'blog/component/thumbnail.html' with article=article %}
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

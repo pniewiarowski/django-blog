@@ -1,11 +1,19 @@
 {% extends "shared/base.html" %}
 
 {% block title %}
-    Article Title
+    {{ article.title }}
 {% endblock %}
 
 {% block content %}
     <div class="heading">
-        <h1 class="heading__text heading__text--h1">Article Details!</h1>
+        <h1 class="heading__text heading__text--h1">{{ article.title }}</h1>
+    </div>
+
+    <div class="paragraph">
+        <p class="paragraph__text">{{ article.short_description }}</p>
+    </div>
+
+    <div class="paragraph">
+        <p class="paragraph__text">{{ article.main_content }}</p>
     </div>
 {% endblock %}

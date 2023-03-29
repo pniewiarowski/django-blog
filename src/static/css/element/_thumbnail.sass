@@ -1,0 +1,42 @@
+/*
+  BEM block for Thumbnail.
+
+.thumbnail
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  width: 40rem
+  height: 25rem
+  background-attachment: fixed
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  transform: scale(0.95)
+  border: solid 0.5rem $main-light-color
+  border-radius: 0.5rem
+  transition: transform ease-in-out 80ms
+
+  &:before
+    content: ''
+    position: absolute
+    top: 110%
+    width: 0.5rem
+    height: 0.5rem
+    background-color: $main-light-color
+    transition: width ease-in-out 80ms
+
+  &:hover
+    cursor: pointer
+    transform: scale(0.90)
+
+    &:before
+      width: 8rem
+
+  &__title
+    font-size: 4rem
+    font-weight: 900
+    font-family: $accent-font-family
+    letter-spacing: 0.25rem
+    color: $main-light-color
+    border-bottom: solid 1rem $main-light-color

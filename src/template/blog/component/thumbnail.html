@@ -1,0 +1,6 @@
+<a class="thumbnail"
+   href="{% url 'blog-article-details' primary_key=article.id %}"
+   style="background-image: url('{{ article.thumbnail.url }}')"
+>
+    <h2 class="thumbnail__title">{{ article.title }}</h2>
+</a>
