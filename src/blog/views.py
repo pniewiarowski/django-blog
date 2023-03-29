@@ -3,7 +3,6 @@ from django.views.decorators.http import require_http_methods
 from django.http import HttpResponseNotFound
 
 from . import models
-from . import utils
 
 
 @require_http_methods(['GET'])
@@ -35,9 +34,11 @@ def article_details(request, primary_key):
     if not article.is_enabled:
         return HttpResponseNotFound(request)
 
+    article.increment_views()
+
     template = 'blog/article_details.html'
     context = {
-        'article': utils.increment_article_views(article)
+        'article': article
     }
 
     return render(request, template, context)

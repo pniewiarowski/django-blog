@@ -52,3 +52,13 @@ class Article(models.Model):
         :return: Article instance string representation.
         """
         return f'{self.title}'
+
+    def increment_views(self):
+        """
+        Update views for current article instance.
+        :return: Current updated instance.
+        """
+        self.views += 1
+        self.save()
+
+        return self
