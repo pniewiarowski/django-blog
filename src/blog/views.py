@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_http_methods
+from django.http import HttpResponseNotFound
 
 from . import models
 
@@ -28,9 +29,14 @@ def article_details(request, primary_key):
     :param request: Given request.
     :return: Response as a rendered template.
     """
+    article = get_object_or_404(models.Article, pk=primary_key)
+
+    if not article.is_enabled:
+        return HttpResponseNotFound(request)
+
     template = 'blog/article_details.html'
     context = {
-        'article': get_object_or_404(models.Article, pk=primary_key)
+        'article': article
     }
 
     return render(request, template, context)
