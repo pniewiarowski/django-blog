@@ -5,11 +5,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="grid">
-        {% for article in articles %}
-            <div class="grid__item">
-                {% include 'blog/component/thumbnail.html' with article=article %}
-            </div>
+
+    <ol>
+        {% for category in categories %}
+            <li>
+                {{ category.title }}
+            </li>
         {% endfor %}
-    </div>
+    </ol>
+
+    <ol>
+        {% for article in articles %}
+            <li>
+                <a href="{% url 'blog-article-details' primary_key=article.id %}">{{ article.title }}</a>
+                <p>views [ {{ article.views }} ]</p>
+            </li>
+        {% endfor %}
+    </ol>
 {% endblock %}

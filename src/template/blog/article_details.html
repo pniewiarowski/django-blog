@@ -5,15 +5,28 @@
 {% endblock %}
 
 {% block content %}
-    <div class="heading">
-        <h1 class="heading__text heading__text--h1">{{ article.title }}</h1>
+    <div>
+        <h1>{{ article.title }}</h1>
     </div>
 
-    <div class="paragraph">
-        <p class="paragraph__text">{{ article.short_description }}</p>
+    <div>
+        <p>{{ article.short_description }}</p>
     </div>
 
-    <div class="paragraph">
-        <p class="paragraph__text">{{ article.main_content }}</p>
+    <div>
+        <p>{{ article.main_content }}</p>
+    </div>
+
+    <div>
+        <div>
+            {% if article.previous %}
+                <a href="{% url 'blog-article-details' primary_key=article.previous.id %}">previous</a>
+            {% endif %}
+        </div>
+        <div>
+            {% if article.next %}
+                <a href="{% url 'blog-article-details' primary_key=article.next.id %}">next</a>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
