@@ -38,7 +38,8 @@ def article_details(request, primary_key):
 
     template = 'blog/article_details.html'
     context = {
-        'article': article
+        'article': article,
+        'comments': article.comment_set.filter(is_enabled=1)
     }
 
     return render(request, template, context)
