@@ -38,6 +38,8 @@ class Article(models.Model):
     created = models.DateTimeField(default=timezone.now, blank=False, null=False)
     views = models.IntegerField(default=0, blank=False, null=False, validators=[MinValueValidator(0)])
     category = models.ForeignKey(to=Category, on_delete=models.SET_NULL, blank=True, null=True)
+    next = models.ForeignKey(to='self', related_name='%(class)s_next', on_delete=models.SET_NULL, blank=True, null=True)
+    previous = models.ForeignKey(to='self', related_name='%(class)s_previous', on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
         """
