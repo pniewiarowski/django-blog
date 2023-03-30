@@ -5,20 +5,22 @@
 <html lang="en">
 
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% include "shared/component/head.html" %}
         <title>
             {% block title %}{% endblock %} | The Blog
         </title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/main.css' %}">
-        <script defer src="{% static 'javascript/main.js' %}"></script>
     </head>
 
     <body>
-        <div class="app">
-            <div class="app__content">
+        <div>
+            <div>
+                {% include "shared/component/nav.html" %}
+            </div>
+            <div>
                 {% block content %}{% endblock %}
+            </div>
+            <div>
+                {% include "shared/component/footer.html" %}
             </div>
         </div>
     </body>

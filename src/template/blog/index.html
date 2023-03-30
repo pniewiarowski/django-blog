@@ -9,7 +9,7 @@
     <ol>
         {% for category in categories %}
             <li>
-                {{ category.title }}
+                {% include "blog/component/category.html" with category=category%}
             </li>
         {% endfor %}
     </ol>
@@ -17,8 +17,7 @@
     <ol>
         {% for article in articles %}
             <li>
-                <a href="{% url 'blog-article-details' primary_key=article.id %}">{{ article.title }}</a>
-                <p>views [ {{ article.views }} ]</p>
+                {% include "blog/component/thumbnail.html" with article=article %}
             </li>
         {% endfor %}
     </ol>
