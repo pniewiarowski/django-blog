@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator
 
 class Category(models.Model):
     """
-    Model data class for blog category
+    Model data class for blog category.
     """
     is_enabled = models.BooleanField(default=True)
     title = models.CharField(max_length=64, unique=True, blank=False, null=False)
