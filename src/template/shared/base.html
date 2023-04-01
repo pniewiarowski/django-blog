@@ -12,14 +12,14 @@
     </head>
 
     <body>
-        <div>
-            <div>
+        <div class="app">
+            <div class="app__nav">
                 {% include "shared/component/nav.html" %}
             </div>
-            <div>
+            <div class="app__content">
                 {% block content %}{% endblock %}
             </div>
-            <div>
+            <div class="app__footer">
                 {% include "shared/component/footer.html" %}
             </div>
         </div>
