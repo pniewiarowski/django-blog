@@ -2,6 +2,16 @@
   File to compile to CSS, do not write CSS
   rules there, only imports from submodules.
 
+/* Variables.
 @import "var/var"
+
+/* All utils that not match to BEM convention.
+@import "util/success"
+
+/* Base restart for CSS.
 @import "base/base"
+
+/* BEM blocks.
 @import "element/app"
+@import "element/nav"
+@import "element/footer"
