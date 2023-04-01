@@ -1,0 +1,14 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block branding %}
+    {% block extrastyle %}
+        <link rel='stylesheet' href='{% static 'css/main.css' %}'>
+    {% endblock %}
+    <a href="/admin">
+        <h1 class="nav__brand">
+            <span class="success-foreground">t</span>he
+            <span class="success-foreground">blog</span>
+            | admin site
+        </h1>
+    </a>
+{% endblock %}
